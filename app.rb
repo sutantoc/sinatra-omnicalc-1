@@ -10,6 +10,7 @@ get("/square/new") do
 end
 
 
-get("square/results") do
+get("/square/results") do
+  @number = params.fetch("number").to_i
   erb (:square_results)
 end
