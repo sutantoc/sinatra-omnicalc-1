@@ -41,3 +41,14 @@ get("/payment/results") do
   @payment = @numerator / @denominator
   erb(:payment_results)
 end
+
+get("/random/new") do
+  erb(:random)
+end
+
+get ("/random/results") do
+  @user_min = params.fetch("user_min").to_f
+  @user_max = params.fetch("user_max").to_f
+  @random = rand(@user_min..@user_max)
+  erb(:random_results)
+end
